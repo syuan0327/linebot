@@ -53,7 +53,30 @@ def handle_message(event):
     elif '疾疾護法現身' in msg:
         message = TextSendMessage(text='🦌')
         line_bot_api.reply_message(event.reply_token, message)
-        
+    elif '阿瓦坦克坦拉' in msg:
+        message = TextSendMessage(text='啊~~~~')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '你好' in msg:
+        message = TextSendMessage(text='你好呀，你今天快樂嗎?')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '快樂' in msg:
+        message = TextSendMessage(text='那真是太好了呢')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '不快樂' in msg:
+        message = TextSendMessage(text='為甚麼呢，你願意跟我分享嗎?')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '好' in msg:
+        message = TextSendMessage(text='好的，請告訴我吧')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '願意' in msg:
+        message = TextSendMessage(text='好的，請告訴我吧')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '不願意' in msg:
+        message = TextSendMessage(text='好吧!你願意的話隨時可以告訴我呦~')
+        line_bot_api.reply_message(event.reply_token, message)
+     elif '不好' in msg:
+        message = TextSendMessage(text='好吧!你願意的話隨時可以告訴我呦~')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
