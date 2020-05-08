@@ -74,7 +74,7 @@ def handle_message(event):
     elif '不願意' in msg:
         message = TextSendMessage(text='好吧!你願意的話隨時可以告訴我呦~')
         line_bot_api.reply_message(event.reply_token, message)
-     elif '不好' in msg:
+    elif '不好' in msg:
         message = TextSendMessage(text='好吧!你願意的話隨時可以告訴我呦~')
         line_bot_api.reply_message(event.reply_token, message)
     else:
