@@ -51,7 +51,7 @@ def handle_message(event):
         message = TextSendMessage(text='登登登ㄌㄥ')
         line_bot_api.reply_message(event.reply_token, message)
     elif '疾疾護法現身' in msg:
-        message = img_message()
+        message = TextSendMessage(text='🦌')
         line_bot_api.reply_message(event.reply_token, message)
         
     else:
