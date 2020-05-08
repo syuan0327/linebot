@@ -10,7 +10,7 @@ from linebot.models import *
 
 
 #======這裡是呼叫的檔案內容=====
-#from message import *
+from message import *
 #from new import *
 #from Function import *
 #======這裡是呼叫的檔案內容=====
@@ -42,11 +42,18 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if '去去武器走' in msg:
-        message = TextSendMessage(text='武器飛走了')
+        message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
         line_bot_api.reply_message(event.reply_token, message)
     elif '速速前' in msg:
         message = TextSendMessage(text='咻~')
         line_bot_api.reply_message(event.reply_token, message)
+    elif '復復修' in msg:
+        message = TextSendMessage(text='登登登ㄌㄥ')
+        line_bot_api.reply_message(event.reply_token, message)
+    elif '疾疾護法現身' in msg:
+        message = img_message()
+        line_bot_api.reply_message(event.reply_token, message)
+        
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
