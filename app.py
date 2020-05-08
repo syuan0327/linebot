@@ -10,7 +10,7 @@ from linebot.models import *
 
 
 #======這裡是呼叫的檔案內容=====
-from massage import *
+#from massage import *
 #from new import *
 #from Function import *
 #======這裡是呼叫的檔案內容=====
