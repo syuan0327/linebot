@@ -8,11 +8,6 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
-from linebot import (LineBotApi, WebhookHandler)
-from linebot.exceptions import (InvalidSignatureError)
-from linebot.models import *
-
-
 
 #======這裡是呼叫的檔案內容=====
 from message import *
