@@ -56,9 +56,6 @@ def handle_message(event):
     if '阿瓦坦克坦拉' in msg:
         message = TextSendMessage(text='啊~~~~')
         line_bot_api.reply_message(event.reply_token, message)
-    else:
-        message = TextSendMessage(text=msg)
-        line_bot_api.reply_message(event.reply_token, message)
     
 
     if '你好' in msg:
@@ -71,6 +68,9 @@ def handle_message(event):
         message = TextSendMessage(text='為甚麼呢，你願意跟我分享嗎?')
         line_bot_api.reply_message(event.reply_token, message)
    
+    else:
+        message = TextSendMessage(text=msg)
+        line_bot_api.reply_message(event.reply_token, message)
     
 
 
