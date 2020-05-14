@@ -62,7 +62,7 @@ def handle_message(event):
         message = TextSendMessage(text='你好呀，你今天快樂嗎?')
         line_bot_api.reply_message(event.reply_token, message)
     if '生日' in msg:
-        message = TextSendMessage(package_id=4, sticker_id=307) 
+        message = TextSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, message)
     if '快樂' in msg: 
         message = TextSendMessage(text='那真是太好了呢')
