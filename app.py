@@ -69,6 +69,10 @@ def handle_message(event):
         message = TextSendMessage(text='早安')
         sticker = StickerSendMessage(package_id=3, sticker_id=240 ) 
         line_bot_api.reply_message(event.reply_token, [message,sticker])
+    if '晚安' in msg: 
+        message = TextSendMessage(text='晚安')
+        image = ImageSendMessage(img='https://i.ytimg.com/vi/Pi-aRsBuVeQ/maxresdefault.jpg')
+        line_bot_api.reply_message(event.reply_token, [message,image])
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
