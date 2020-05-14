@@ -63,12 +63,12 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message)
     if '生日' in msg:
         message = TextSendMessage(text='HAPPY BIRTHDAY!')
-        message = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
-        line_bot_api.reply_message(event.reply_token, message)
+        sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
+        line_bot_api.reply_message(event.reply_token, message,sticker)
     if '早安' in msg: 
         message = TextSendMessage(text='早安')
-        message = StickerSendMessage(package_id=3, sticker_id=240 ) 
-        line_bot_api.reply_message(event.reply_token, message)
+        sticker = StickerSendMessage(package_id=3, sticker_id=240 ) 
+        line_bot_api.reply_message(event.reply_token, message,sticker)
     if '不' in msg:
         message = TextSendMessage(text='為甚麼呢，你願意跟我分享嗎?')
         line_bot_api.reply_message(event.reply_token, message)
