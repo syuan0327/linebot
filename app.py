@@ -85,7 +85,7 @@ def handle_sticker_message(event):
         event.reply_token, 
         StickerSendMessage(package_id=pid, sticker_id=sid)
     )
-    if package_id=11538 and sticker_id=51626495 in allid
+    if package_id='11538' and sticker_id='51626495' in allid
     StickerSendMessage(package_id=11538, sticker_id=51626509)
 
     
