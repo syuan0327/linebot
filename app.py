@@ -89,7 +89,7 @@ def handle_sticker_message(event):
 
 @handler.add(MessageEvent, message=ImgMessage)
 def handle_img_message(event):
-img= event.message.img
+    img= event.message.img
 
 
 
