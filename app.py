@@ -71,9 +71,17 @@ def handle_message(event):
    
     else:
         message = TextSendMessage(text=msg)
-        message = StickerSendMessage(package_id=3,
-        sticker_id=233 )
         line_bot_api.reply_message(event.reply_token, message)
+
+@handler.add(MessageEvent, message=StickerMessage)
+def handle_sticker_message(event):
+    pid = event.message.package_id
+    sid = event.message.sticker_id
+    line_bot_api.reply_message(
+        event.reply_token, 
+        StickerSendMessage(package_id=pid, sticker_id=sid)
+    )
+
     
 
 
