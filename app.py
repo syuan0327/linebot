@@ -40,9 +40,7 @@ def callback():
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
-@handler.add(MessageEvent, message=StikerMessage)
 def handle_message(event):
-def handle_stickermessage(event):
     msg = event.message.text
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
