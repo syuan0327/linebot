@@ -13,7 +13,6 @@ from linebot.models import *
 #from massage import *
 #from new import *
 #from Function import *
-from sticker import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
