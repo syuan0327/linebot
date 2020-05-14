@@ -61,10 +61,10 @@ def handle_message(event):
     if '你好' in msg:
         message = TextSendMessage(text='你好呀，你今天快樂嗎?')
         line_bot_api.reply_message(event.reply_token, message)
-    if '快樂' in msg and TextSendMessage(text='你好呀，你今天快樂嗎?'): 
+    if '快樂' in msg: 
         message = TextSendMessage(text='那真是太好了呢')
         line_bot_api.reply_message(event.reply_token, message)
-    if '不快樂' in msg and TextSendMessage(text='你好呀，你今天快樂嗎?'):
+    elif '不快樂' in msg:
         message = TextSendMessage(text='為甚麼呢，你願意跟我分享嗎?')
         line_bot_api.reply_message(event.reply_token, message)
    
