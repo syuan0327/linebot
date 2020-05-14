@@ -69,10 +69,12 @@ def handle_message(event):
         message = TextSendMessage(text='早安')
         sticker = StickerSendMessage(package_id=3, sticker_id=240 ) 
         line_bot_api.reply_message(event.reply_token, [message,sticker])
-    if '不' in msg:
-        message = TextSendMessage(text='為甚麼呢，你願意跟我分享嗎?')
-        line_bot_api.reply_message(event.reply_token, message)
-   
+
+    
+   if '無聊' in msg: 
+        message = TextSendMessage(text='找碴')
+        image = ImgSendMessage(img='https://i.ytimg.com/vi/Pi-aRsBuVeQ/maxresdefault.jpg')
+        line_bot_api.reply_message(event.reply_token, [message,image])
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
@@ -86,6 +88,10 @@ def handle_sticker_message(event):
         StickerSendMessage(package_id=pid, sticker_id=sid)
     )
     
+
+@handler.add(MessageEvent, message=ImgMessage)
+def handle_img_message(event):
+img= event.message.img
 
 
 
