@@ -71,7 +71,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [message,sticker])
     if '無聊' in msg: 
         message = TextSendMessage(text='找碴')
-        image = ImgSendMessage(img='https://i.ytimg.com/vi/Pi-aRsBuVeQ/maxresdefault.jpg')
+        image = ImageSendMessage(img='https://i.ytimg.com/vi/Pi-aRsBuVeQ/maxresdefault.jpg')
         line_bot_api.reply_message(event.reply_token, [message,image])
     else:
         message = TextSendMessage(text=msg)
