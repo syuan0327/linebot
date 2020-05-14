@@ -71,7 +71,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [message,sticker])
     if '晚安' in msg: 
         message = TextSendMessage(text='晚安')
-        image = ImageSendMessage(img='https://i.ytimg.com/vi/Pi-aRsBuVeQ/maxresdefault.jpg')
+        image = ImageSendMessage(img='https://github.com/syuan0327/linebot/blob/master/maxresdefault.jpg?raw=true')
         line_bot_api.reply_message(event.reply_token, [message,image])
     else:
         message = TextSendMessage(text=msg)
