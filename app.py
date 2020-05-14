@@ -13,6 +13,7 @@ from linebot.models import *
 #from massage import *
 #from new import *
 #from Function import *
+from sticker import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
@@ -39,7 +40,9 @@ def callback():
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=StikerMessage)
 def handle_message(event):
+def handle_stickermessage(event):
     msg = event.message.text
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
@@ -64,17 +67,21 @@ def handle_message(event):
     if '快樂' in msg: 
         message = TextSendMessage(text='那真是太好了呢')
         line_bot_api.reply_message(event.reply_token, message)
-    elif '不快樂' in msg:
+    if '不' in msg:
         message = TextSendMessage(text='為甚麼呢，你願意跟我分享嗎?')
         line_bot_api.reply_message(event.reply_token, message)
    
     else:
         message = TextSendMessage(text=msg)
+        message = StickerSendMessage(package_id=3,
+        sticker_id=233 )
         line_bot_api.reply_message(event.reply_token, message)
     
+
 
 
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+    
