@@ -69,9 +69,7 @@ def handle_message(event):
         message = TextSendMessage(text='早安')
         sticker = StickerSendMessage(package_id=3, sticker_id=240 ) 
         line_bot_api.reply_message(event.reply_token, [message,sticker])
-
-    
-   if '無聊' in msg: 
+    if '無聊' in msg: 
         message = TextSendMessage(text='找碴')
         image = ImgSendMessage(img='https://i.ytimg.com/vi/Pi-aRsBuVeQ/maxresdefault.jpg')
         line_bot_api.reply_message(event.reply_token, [message,image])
