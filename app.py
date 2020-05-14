@@ -62,6 +62,7 @@ def handle_message(event):
         message = TextSendMessage(text='你好呀，你今天快樂嗎?')
         line_bot_api.reply_message(event.reply_token, message)
     if '生日' in msg:
+        message = TextSendMessage(text='HAPPY BIRTHDAY!')
         message = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, message)
     if '快樂' in msg: 
@@ -79,10 +80,13 @@ def handle_message(event):
 def handle_sticker_message(event):
     pid = event.message.package_id
     sid = event.message.sticker_id
+    allid=event.message.sticker_id and event.message.package_id
     line_bot_api.reply_message(
         event.reply_token, 
         StickerSendMessage(package_id=pid, sticker_id=sid)
     )
+    if package_id=11538 and sticker_id=51626495 in allid
+    StickerSendMessage(package_id=11538, sticker_id=51626509)
 
     
 
