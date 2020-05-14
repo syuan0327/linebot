@@ -40,7 +40,11 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+@handler.add(MessageEvent, message=StickerMessage)
+def handle_sticker_message(event):
     msg = event.message.text
+    pid = event.message.package_id
+    sid = event.message.sticker_id
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
         line_bot_api.reply_message(event.reply_token, message)
@@ -62,7 +66,7 @@ def handle_message(event):
         message = TextSendMessage(text='你好呀，你今天快樂嗎?')
         line_bot_api.reply_message(event.reply_token, message)
     if '生日' in msg:
-        message = TextSendMessage(package_id=11537, sticker_id=52002734 ) 
+        message = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, message)
     if '快樂' in msg: 
         message = TextSendMessage(text='那真是太好了呢')
@@ -74,15 +78,9 @@ def handle_message(event):
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
-
-@handler.add(MessageEvent, message=StickerMessage)
-def handle_sticker_message(event):
-    pid = event.message.package_id
-    sid = event.message.sticker_id
-    line_bot_api.reply_message(
+        line_bot_api.reply_message(
         event.reply_token, 
         StickerSendMessage(package_id=pid, sticker_id=sid)
-    )
 
     
 
