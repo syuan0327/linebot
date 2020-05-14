@@ -40,11 +40,7 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-@handler.add(MessageEvent, message=StickerMessage)
-def handle_sticker_message(event):
     msg = event.message.text
-    pid = event.message.package_id
-    sid = event.message.sticker_id
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
         line_bot_api.reply_message(event.reply_token, message)
