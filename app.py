@@ -8,6 +8,8 @@ from linebot.exceptions import (
 )
 from linebot.models import *
 
+import random 
+
 
 #======這裡是呼叫的檔案內容=====
 #from massage import *
@@ -79,22 +81,13 @@ def handle_message(event):
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
-    pid = event.message.package_id
-    sid = event.message.sticker_id
+    pid = ndom.randint(180, 259)
+    sid = 3
+
     line_bot_api.reply_message(
         event.reply_token, 
         StickerSendMessage(package_id=pid, sticker_id=sid)
     )
-    
-
-@handler.add(MessageEvent, message=ImageMessage)
-def handle_image_message(event):
-    img= event.message.img
-    line_bot_api.reply_message(
-        event.reply_token, 
-        StickerSendMessage(img)
-    )
-
 
 
 
