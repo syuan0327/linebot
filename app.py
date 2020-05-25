@@ -81,8 +81,8 @@ def handle_message(event):
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
-    pid = 3
-    sid = random.randint(180, 259)
+    pid = random.randint(1,4)
+    sid = random.randint(1, 527)
 
     line_bot_api.reply_message(
         event.reply_token, 
