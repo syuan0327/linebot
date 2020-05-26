@@ -116,11 +116,6 @@ def handle_sticker_message(event):
         StickerSendMessage(package_id,sticker_id)=d
     )
 
-@handleradd(MessageEvent, message=ImageMessage)
-def handle_image_message(event)
-
-
-
 
 
 import os
