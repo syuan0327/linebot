@@ -113,7 +113,7 @@ def handle_sticker_message(event):
 
     line_bot_api.reply_message(
         event.reply_token, 
-        StickerSendMessage(sticker)
+        StickerSendMessage((package_id, sticker_id)=sticker)
     )
 
 
