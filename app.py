@@ -119,7 +119,7 @@ def handle_sticker_message(event):
 
 
 def reply_text(token,id,txt):
-    if txt == '開燈'
+    if txt = '開燈'
         try:
             feedback = req.get(
                 f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
@@ -134,7 +134,7 @@ def reply_text(token,id,txt):
             txt ='沒有回應!'
         line_bot_api.reply_message(token,TextSendMessage(text=txt))
 
-    elif txt=='關燈':
+    elif txt='關燈':
         try:
             feedback = req.get(
                 f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
