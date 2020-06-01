@@ -45,7 +45,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    line_bot_api.push_message( '9c2800fa-024f-4c4c-bed5-5259a6535252', TextSendMessage(text='你好'))
+    line_bot_api.push_message('9c2800fa024f4c4cbed55259a6535252', TextSendMessage(text='你好'))
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
         line_bot_api.reply_message(event.reply_token, message)
