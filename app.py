@@ -109,7 +109,12 @@ def handle_sticker_message(event):
         StickerSendMessage(package_id=s1, sticker_id=s2)
     )
 
+profile = line_bot_api.get_profile('')
 
+
+print(profile.display_name)
+
+print(profile.user_id)
 
 
 
