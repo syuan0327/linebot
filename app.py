@@ -119,7 +119,8 @@ def handle_sticker_message(event):
 
 
 def reply_text(token,id,txt):
-    if txt = '開燈'
+    txt = event.message.text
+    if  '開燈' in txt:
         try:
             feedback = req.get(
                 f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
