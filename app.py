@@ -43,6 +43,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    line_bot_api.push_message('syuan0327',TextSendMessage(text='你好'))
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
         line_bot_api.reply_message(event.reply_token, message)
@@ -85,19 +86,15 @@ def handle_sticker_message(event):
     sid1_1=random.randint(1,21)
     sid1_2=random.randint(100,139)
     sid1_3=random.randint(401,430)
-
     pid2=2
     sid2_1=random.randint(18,47)
     sid2_2=random.randint(140,179)
     sid2_3=random.randint(501,527)
-
     pid3=3
     sid3=random.randint(180, 259)
-
     pid4=4
     sid4_1=random.randint(260,307)
     sid4_2=random.randint(601,632)
-
     a1=(pid1,sid1_1)
     a2=(pid1,sid1_2)
     a3=(pid1,sid1_3)
@@ -108,9 +105,6 @@ def handle_sticker_message(event):
     d1=(pid4,sid4_1)
     d2=(pid4,sid4_2)
     (s1,s2)=random.choice([a1,a2,a3,b1,b2,b3,c1,d1,d2])
-
-
-
     line_bot_api.reply_message(
         event.reply_token, 
         StickerSendMessage(package_id=s1, sticker_id=s2)
