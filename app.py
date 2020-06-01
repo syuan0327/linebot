@@ -9,6 +9,7 @@ from linebot.exceptions import (
 from linebot.models import *
 
 import random 
+import requests as req
 
 
 #======這裡是呼叫的檔案內容=====
@@ -23,6 +24,11 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('zpR6x4Yx6Y7ixafUvkn7JtWXho8SH215tvYXMlPEQ5ZE0uP8fZEgZ1dbeMGucH+Cz+nGq9CavJwt6Jhd/2IuZx7qkGLxkKmNhQ90VE4pvgAkbUdWUi0L9j4H9zwWz/2uYgsJwZkNl42W30vcmb18pgdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('25c641fcc4425171f5fa22193a7c703b')
+
+ME ='U2802b44d4a06c4654a2f09bc5faf0d08'
+passcode = 'kimo0327'
+ESP8266_IP = ''
+
 
 
 
@@ -111,6 +117,40 @@ def handle_sticker_message(event):
         StickerSendMessage(package_id=s1, sticker_id=s2)
     )
 
+
+def reply_text(token,id,txt):
+    if txt == '開燈'
+        try:
+            feedback = req.get(
+                f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
+            ).text
+            pintf('控制器回應:',feedback)
+
+            if 'OK!' in feedback:
+                txt = 'opened!'
+            else:
+                txt='沒有回應!'
+        except:
+            txt ='沒有回應!'
+        line_bot_api.reply_message(token,TextSendMessage(text=txt))
+
+    elif txt=='關燈':
+        try:
+            feedback = req.get(
+                f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
+            ).text
+            pintf('控制器回應:',feedback)
+
+            if 'OK!' in feedback:
+                txt = 'closed!'
+            else:
+                txt='沒有回應!'
+        except:
+            txt ='沒有回應!'
+        line_bot_api.reply_message(token,TextSendMessage(text=txt))
+    
+    else:
+        line_bot_api.reply_message(text='收到訊息了')
 
 
 
