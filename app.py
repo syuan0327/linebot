@@ -135,7 +135,7 @@ def reply_text(token,id,txt):
             txt ='沒有回應!'
         line_bot_api.reply_message(token,TextSendMessage(text=txt))
 
-    elif txt='關燈':
+    elif '關燈' in txt:
         try:
             feedback = req.get(
                 f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
