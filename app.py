@@ -83,8 +83,9 @@ def handle_message(event):
         message = TextSendMessage(text='晚安')
         image = ImageSendMessage(img='https://assets.juksy.com/files/articles/97341/800x_100_w-5e0fec9c35a9b.jpg' )
         line_bot_api.reply_message(event.reply_token, [message,image])
+
+    
     else:
-        message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=StickerMessage)
