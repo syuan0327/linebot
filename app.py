@@ -24,6 +24,8 @@ line_bot_api = LineBotApi('zpR6x4Yx6Y7ixafUvkn7JtWXho8SH215tvYXMlPEQ5ZE0uP8fZEgZ
 # Channel Secret
 handler = WebhookHandler('25c641fcc4425171f5fa22193a7c703b')
 
+
+
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -43,6 +45,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
+    line_bot_api.push_message( '9c2800fa-024f-4c4c-bed5-5259a6535252', TextSendMessage(text='你好'))
     if '去去武器走' in msg:
         message = TextSendMessage(text='(∩^o^)⊃━☆ﾟ.*･｡')
         line_bot_api.reply_message(event.reply_token, message)
