@@ -48,7 +48,7 @@ def callback():
     return 'OK'
 
 # 處理訊息
-"""@handler.add(MessageEvent, message=TextMessage)
+@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
     if '去去武器走' in msg:
@@ -87,7 +87,7 @@ def handle_message(event):
     
     else:
         message = TextSendMessage(text=msg)
-        line_bot_api.reply_message(event.reply_token, message)"""
+        line_bot_api.reply_message(event.reply_token, message)
 
 @handler.add(MessageEvent, message=StickerMessage)
 def handle_sticker_message(event):
@@ -120,40 +120,6 @@ def handle_sticker_message(event):
     )
 
 
-def reply_text(token,id,txt):
-    txt = event.message.text
-    if  '開燈' in txt:
-        try:
-            feedback = req.get(
-                f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
-            ).text
-            pintf('控制器回應:',feedback)
-
-            if 'OK!' in feedback:
-                txt = 'opened!'
-            else:
-                txt='沒有回應!'
-        except:
-            txt ='沒有回應!'
-        line_bot_api.reply_message(token,TextSendMessage(text=txt))
-
-    elif '關燈' in txt:
-        try:
-            feedback = req.get(
-                f'http://{ESP8266_IP}/sw?'+f'key={passcode}&led=on'
-            ).text
-            pintf('控制器回應:',feedback)
-
-            if 'OK!' in feedback:
-                txt = 'closed!'
-            else:
-                txt='沒有回應!'
-        except:
-            txt ='沒有回應!'
-        line_bot_api.reply_message(token,TextSendMessage(text=txt))
-    
-    else:
-        line_bot_api.reply_message(text='收到訊息了')
 
 
 
