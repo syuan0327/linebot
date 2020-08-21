@@ -55,7 +55,7 @@ def handle_message(event):
     if '魔動北極星' in msg:
         message1.append= TextSendMessage(text='哇~好聰明恭喜你答對了!')
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
-        line_bot_api.reply_message(event.reply_token, [message,sticker])
+        line_bot_api.reply_message(event.reply_token, [message1,sticker])
     if '復復修' in msg:
         message = TextSendMessage(text='登登登ㄌㄥ')
         line_bot_api.reply_message(event.reply_token, message)
