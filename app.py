@@ -72,10 +72,12 @@ def handle_message(event):
     if '3' in msg:
         message1 = TextSendMessage(text='第三題')
         message2 = TextSendMessage(text='請輸入密碼：')
+        message3 = TextSendMessage(text='不知道嗎?：')
         line_bot_api.reply_message(event.reply_token, [message1,message2])
-    time.sleep(3)
-    message1 = TextSendMessage(text='想不到嘛?')
-    line_bot_api.reply_message(event.reply_token,message1)
+        time.sleep(3)
+        line_bot_api.reply_message(event.reply_token, message3)
+    
+
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
