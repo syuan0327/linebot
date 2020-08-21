@@ -53,7 +53,7 @@ def handle_message(event):
         message1.append( TextSendMessage('請說出你的暗號：') )
         line_bot_api.reply_message(event.reply_token, message1 )
     if '魔動北極星' in msg:
-        message = TextSendMessage(text='哇~好聰明恭喜你答對了!')
+        message1.append= TextSendMessage(text='哇~好聰明恭喜你答對了!')
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, [message,sticker])
     if '復復修' in msg:
