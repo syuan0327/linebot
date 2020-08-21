@@ -52,38 +52,11 @@ def handle_message(event):
         message1.append( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球\n稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭\n說出你的暗號 ') )
         message1.append( TextSendMessage('請說出你的暗號：') )
         line_bot_api.reply_message(event.reply_token, message1 )
-    elif '魔動北極星' in msg:
-        message2=[]
-        message2.append= TextSendMessage(text='哇~好聰明恭喜你答對了!')
+    if '魔動北極星' in msg:
+        message.append( TextSendMessage('哇~好聰明恭喜你答對了!') )
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
-        line_bot_api.reply_message(event.reply_token, [message2,sticker])
-    if '復復修' in msg:
-        message = TextSendMessage(text='登登登ㄌㄥ')
-        line_bot_api.reply_message(event.reply_token, message)
-    if '疾疾護法現身' in msg:
-        message = TextSendMessage(text='🦌')
-        line_bot_api.reply_message(event.reply_token, message)
-    if '阿瓦坦克坦拉' in msg:
-        message = TextSendMessage(text='啊~~~~')
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token, [message,sticker])
     
-
-    if '你好' in msg:
-        message = TextSendMessage(text='你好呀，你今天快樂嗎?')
-        line_bot_api.reply_message(event.reply_token, message)
-    if '生日' in msg:
-        message = TextSendMessage(text='HAPPY BIRTHDAY!')
-        sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
-        line_bot_api.reply_message(event.reply_token, [message,sticker])
-    if '早安' in msg: 
-        message = TextSendMessage(text='早安')
-        sticker = StickerSendMessage(package_id=3, sticker_id=240 ) 
-        line_bot_api.reply_message(event.reply_token, [message,sticker])
-    if '晚安' in msg: 
-        message = TextSendMessage(text='晚安')
-        image = ImageSendMessage(img='https://assets.juksy.com/files/articles/97341/800x_100_w-5e0fec9c35a9b.jpg' )
-        line_bot_api.reply_message(event.reply_token, [message,image])
-
     
     else:
         message = TextSendMessage(text=msg)
