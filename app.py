@@ -51,11 +51,20 @@ def handle_message(event):
         message1.append( TextSendMessage('第一題') )
         message1.append( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球\n稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭\n說出你的暗號：') )
         line_bot_api.reply_message(event.reply_token, message1 )
-        if '魔動北極星' in msg:
-            message1 = TextSendMessage(text='哇~好聰明恭喜你答對了!')
-            message2 = TextSendMessage(text='請輸入2來進行下一題')
-            sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
-            line_bot_api.reply_message(event.reply_token, [message1,message2,sticker])
+    if '魔動北極星' in msg:
+        message1 = TextSendMessage(text='哇~好聰明恭喜你答對了!')
+        message2 = TextSendMessage(text='請輸入2來進行下一題')
+        sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
+        line_bot_api.reply_message(event.reply_token, [message1,message2,sticker])
+    if '2'' in msg:
+        message1 = TextSendMessage(text='第二題(送分題)')
+        message2 = TextSendMessage(text='請問你的寶貝女友愛吃甚麼?')
+        message3 = TextSendMessage(text='A.番茄蛋花湯\nB.火鍋\nC.乳酪蛋糕')
+        message4 = TextSendMessage(text='請回答(你要是錯了就死定了^^)')
+        line_bot_api.reply_message(event.reply_token, [message1,message2,message3,message4])
+        if(msg==A or msg==B or msg==C)
+            message = TextSendMessage(text='你完了!壞蛋')
+            line_bot_api.reply_message(event.reply_token, message)
 
     
     else:
