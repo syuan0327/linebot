@@ -53,7 +53,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message1 )
     if '魔動北極星' in msg:
         message2=[]
-        message2.append=(TextSendMessage('哇~好聰明恭喜你答對了!'))
+        message2.append(TextSendMessage('哇~好聰明恭喜你答對了!'))
         message2.append(TextSendMessage('請輸入"2"來進行下一題'))
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, [message2,sticker])
