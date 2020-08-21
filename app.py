@@ -47,14 +47,14 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if 'yes'or'Yes' in msg:
-        message=[]
-        message.append( TextSendMessage('第一題') )
-        message.append( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球\n稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭\n說出你的暗號 ') )
-        message.append( TextSendMessage('請說出你的暗號：') )
-        line_bot_api.reply_message(event.reply_token, message )
-    if '速速前' in msg:
-        message = TextSendMessage(text='咻~')
-        line_bot_api.reply_message(event.reply_token, message)
+        message1( TextSendMessage('第一題') )
+        message2( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球\n稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭\n說出你的暗號 ') )
+        message3( TextSendMessage('請說出你的暗號：') )
+        line_bot_api.reply_message(event.reply_token, message1,message2,message3)
+    if '魔動北極星' in msg:
+        message = TextSendMessage(text='哇~好聰明恭喜你答對了!')
+        sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
+        line_bot_api.reply_message(event.reply_token, [message,sticker])
     if '復復修' in msg:
         message = TextSendMessage(text='登登登ㄌㄥ')
         line_bot_api.reply_message(event.reply_token, message)
