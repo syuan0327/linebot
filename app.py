@@ -56,8 +56,7 @@ def handle_message(event):
         message2 = TextSendMessage(text='請輸入2來進行下一題')
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, [message1,message2,sticker])
-    if
-    
+
     
     else:
         message = TextSendMessage(text=msg)
