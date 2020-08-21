@@ -46,7 +46,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if 'yes' in msg:
+    if 'yes'or'Yes' in msg:
         message=[]
         message.append( TextSendMessage('第一題') )
         message.append( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球\n稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭\n說出你的暗號 ') )
