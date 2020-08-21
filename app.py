@@ -21,14 +21,9 @@ import requests as req
 app = Flask(__name__)
 
 # Channel Access Token
-line_bot_api = LineBotApi('zpR6x4Yx6Y7ixafUvkn7JtWXho8SH215tvYXMlPEQ5ZE0uP8fZEgZ1dbeMGucH+Cz+nGq9CavJwt6Jhd/2IuZx7qkGLxkKmNhQ90VE4pvgAkbUdWUi0L9j4H9zwWz/2uYgsJwZkNl42W30vcmb18pgdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('A6vxaj+h1yElWG+sxcoy9r85UAWMZr0dWL6fTYykHEFWT4VmxU4k563wwc24Rw4OsbmWncrCKWIeHmGc8Dk/Jdjv1lwC4SGu6LpsujANhz7SVNFs5rcDEZtDulwTN189YiYpYwhEvfdK5EFDUqAZ8gdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('25c641fcc4425171f5fa22193a7c703b')
-
-ME ='U2802b44d4a06c4654a2f09bc5faf0d08'
-passcode = 'kimo0327'
-ESP8266_IP = ''
-
+handler = WebhookHandler('35480a6cf7f6f8b8932cf1c70456915e')
 
 
 
