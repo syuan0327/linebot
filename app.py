@@ -47,10 +47,10 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if 'yes' in msg:
-        reply_arr=[]
-        reply_arr.append( TextSendMessage('第一題') )
-        reply_arr.append( TextSendMessage('請輸入正確的答案') )
-        line_bot_api.reply_message( token, reply_arr )
+        message=[]
+        message.append( TextSendMessage('第一題') )
+        message.append( TextSendMessage('請輸入正確的答案') )
+        line_bot_api.reply_message(event.reply_token, message )
     if '速速前' in msg:
         message = TextSendMessage(text='咻~')
         line_bot_api.reply_message(event.reply_token, message)
