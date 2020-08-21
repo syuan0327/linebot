@@ -49,7 +49,7 @@ def handle_message(event):
     if 'yes' in msg:
         message=[]
         message.append( TextSendMessage('第一題') )
-        message.append( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球 稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭 說出你的暗號\n ') )
+        message.append( TextSendMessage('收到魔動訊號 北極星光閃耀\n飛向快樂星球\n稍息立正稍息立正站好\n超時空的邂逅 銀河系外接頭\n說出你的暗號\n ') )
         message.append( TextSendMessage('請輸入正確的暗號：') )
         line_bot_api.reply_message(event.reply_token, message )
     if '速速前' in msg:
