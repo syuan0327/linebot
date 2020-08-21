@@ -62,8 +62,6 @@ def handle_message(event):
         message3 = TextSendMessage(text='A.番茄蛋花湯\nB.火鍋\nC.乳酪蛋糕')
         message4 = TextSendMessage(text='請回答(你要是錯了就死定了^^)')
         line_bot_api.reply_message(event.reply_token, [message1,message2,message3,message4])
-        
-
     
     else:
         message = TextSendMessage(text=msg)
