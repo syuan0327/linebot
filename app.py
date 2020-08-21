@@ -58,14 +58,16 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [message1,message2,sticker])
     if '2' in msg:
         message1 = TextSendMessage(text='第二題(送分題)')
-        message2 = TextSendMessage(text='請問你的寶貝女友愛吃甚麼?')
-        message3 = TextSendMessage(text='A.番茄蛋花湯\nB.火鍋\nC.乳酪蛋糕')
-        message4 = TextSendMessage(text='請回答(你要是錯了就死定了^^)')
-        line_bot_api.reply_message(event.reply_token, [message1,message2,message3,message4])
-        if(msg=='A' or msg=='B' or msg=='C'):
-                message = TextSendMessage(text='你完了!壞蛋')
-                sticker = StickerSendMessage(package_id=11537, sticker_id=52002767 ) 
-                line_bot_api.reply_message(event.reply_token, [message])
+        message2 = TextSendMessage(text='請問你的寶貝女友愛吃甚麼?\nA.番茄蛋花湯\nB.火鍋\nC.乳酪蛋糕')
+        message3 = TextSendMessage(text='請回答(你要是錯了就死定了^^)')
+        line_bot_api.reply_message(event.reply_token, [message1,message2,message3])
+    if(msg=='A' or msg=='B' or msg=='C'):
+        message = TextSendMessage(text='你完了！壞蛋')
+        sticker = StickerSendMessage(package_id=11537, sticker_id=52002767 ) 
+        line_bot_api.reply_message(event.reply_token, [message,sticker])
+    if(msg=='都愛'):
+        message = TextSendMessage(text='嘿嘿~很懂我嘛')
+        line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text=msg)
         line_bot_api.reply_message(event.reply_token, message)
