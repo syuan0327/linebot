@@ -21,7 +21,7 @@ import requests as req
 app = Flask(__name__)
 
 # Channel Access Token
-line_bot_api = LineBotApi('A6vxaj+h1yElWG+sxcoy9r85UAWMZr0dWL6fTYykHEFWT4VmxU4k563wwc24Rw4OsbmWncrCKWIeHmGc8Dk/Jdjv1lwC4SGu6LpsujANhz7SVNFs5rcDEZtDulwTN189YiYpYwhEvfdK5EFDUqAZ8gdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('VcNCiNMRUPAdMhdubuBWdcx1OTeBpNMgYncC7tx/8RT7MjdJRrdv2N5LgGjUA9JLsbmWncrCKWIeHmGc8Dk/Jdjv1lwC4SGu6LpsujANhz6YiYvBvPQu/ucQzFNfumAREqoiyZKywDk4czKYj+bQEQdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('35480a6cf7f6f8b8932cf1c70456915e')
 
