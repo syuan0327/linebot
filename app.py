@@ -56,7 +56,7 @@ def handle_message(event):
         message2 = TextSendMessage(text='請輸入2來進行下一題')
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, [message1,message2,sticker])
-    if '2'' in msg:
+    if '2' in msg:
         message1 = TextSendMessage(text='第二題(送分題)')
         message2 = TextSendMessage(text='請問你的寶貝女友愛吃甚麼?')
         message3 = TextSendMessage(text='A.番茄蛋花湯\nB.火鍋\nC.乳酪蛋糕')
