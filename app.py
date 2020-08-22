@@ -80,9 +80,6 @@ def handle_message(event):
     if (msg!='12'):
         message1 = TextSendMessage(text='錯誤!請重新輸入')
         line_bot_api.reply_message(event.reply_token, message1)
-    else:
-        message1 = TextSendMessage(text='拱喜答對')
-        line_bot_api.reply_message(event.reply_token, message1)
 
     
 
