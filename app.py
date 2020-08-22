@@ -75,7 +75,7 @@ def handle_message(event):
         message3 = TextSendMessage(text='不知道嗎?：')
         line_bot_api.reply_message(event.reply_token, [message1,message2])
         time.sleep(3)
-        line_bot_api.push_message(TextSendMessage(text='Hello World!'))
+        line_bot_api.push_messages(TextSendMessage(text='Hello World!'))
     
 
     else:
