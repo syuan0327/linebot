@@ -77,9 +77,9 @@ def handle_message(event):
         time.sleep(20)
         line_bot_api.push_message('U1efff3aef850fcbcf090fbc62dfe233b',  TextSendMessage(text='不知道嗎?'))
         line_bot_api.push_message('U1efff3aef850fcbcf090fbc62dfe233b',  TextSendMessage(text='那不如先聽首歌吧!'))
-        if (msg!='12'):
-            message1 = TextSendMessage(text='錯誤!請重新輸入')
-            line_bot_api.reply_message(event.reply_token, message1)
+    if (msg!='12'):
+        message1 = TextSendMessage(text='錯誤!請重新輸入')
+        line_bot_api.reply_message(event.reply_token, message1)
 
     
 
