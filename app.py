@@ -54,10 +54,10 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, message1 )
     if '魔動北極星' in msg:
         message1 = TextSendMessage(text='哇~好聰明恭喜你答對了!')
-        message2 = TextSendMessage(text='請輸入2來進行下一題')
+        message2 = TextSendMessage(text='請輸入豬豬來進行下一題')
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002734 ) 
         line_bot_api.reply_message(event.reply_token, [message1,message2,sticker])
-    if '2' in msg:
+    if '豬豬' in msg:
         message1 = TextSendMessage(text='第二題(送分題)')
         message2 = TextSendMessage(text='請問你的寶貝女友愛吃甚麼?\nA.番茄蛋花湯\nB.火鍋\nC.乳酪蛋糕')
         message3 = TextSendMessage(text='請回答(你要是錯了就死定了^^)')
@@ -68,9 +68,9 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, [message,sticker])
     if(msg=='都愛'or msg=='都喜歡'or msg=='ABC'):
         message1 = TextSendMessage(text='嘿嘿~很懂我嘛')
-        message2 = TextSendMessage(text='請輸入3來進行下一題')
+        message2 = TextSendMessage(text='請輸入狗狗來進行下一題')
         line_bot_api.reply_message(event.reply_token, [message1,message2])
-    if '3' in msg:
+    if '狗狗' in msg:
         message1 = TextSendMessage(text='第三題')
         message2 = TextSendMessage(text='請輸入密碼：')
         line_bot_api.reply_message(event.reply_token, [message1,message2])
