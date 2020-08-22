@@ -65,7 +65,7 @@ def handle_message(event):
         message = TextSendMessage(text='你完了！壞蛋')
         sticker = StickerSendMessage(package_id=11537, sticker_id=52002767 ) 
         line_bot_api.reply_message(event.reply_token, [message,sticker])
-    if(msg=='都愛'or msg=='都喜歡'):
+    if(msg=='都愛'or msg=='都喜歡'or msg=='ABC'):
         message1 = TextSendMessage(text='嘿嘿~很懂我嘛')
         message2 = TextSendMessage(text='請輸入3來進行下一題')
         line_bot_api.reply_message(event.reply_token, [message1,message2])
@@ -75,7 +75,8 @@ def handle_message(event):
         message3 = TextSendMessage(text='不知道嗎?：')
         line_bot_api.reply_message(event.reply_token, [message1,message2])
         time.sleep(3)
-        line_bot_api.reply_message(event.reply_token, message3)
+        line_bot_api.reply_message(event.reply_token,message3)
+
     
 
     else:
